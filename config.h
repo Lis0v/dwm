@@ -61,11 +61,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *flamecmd[] = { "flameshot", "gui", NULL};
-static const char *brightup[] = { "xbacklight", "+10", NULL};
-static const char *brightdown[] = { "xbacklight", "-10", NULL};
-static const char *volup[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char *voldown[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
-static const char *mutevol[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *brightup[] = { "brightnessctl", "s", "10%+", NULL};
+static const char *brightdown[] = { "brightnessctl", "s", "10%-", NULL};
+static const char *volup[] = { "amixer", "set", "Master", "5%+", NULL };
+static const char *voldown[] = { "amixer", "set", "Master", "5%-", NULL };
+static const char *mutevol[] = { "amixer", "set", "Master", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
