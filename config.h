@@ -66,6 +66,7 @@ static const char *brightdown[] = { "brightnessctl", "s", "10%-", NULL};
 static const char *volup[] = { "amixer", "set", "Master", "5%+", NULL };
 static const char *voldown[] = { "amixer", "set", "Master", "5%-", NULL };
 static const char *mutevol[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *clrclip[] = { "xsel", "-c", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -76,7 +77,8 @@ static Key keys[] = {
 	{ NULL,		XF86XK_MonBrightnessDown,  spawn, 	   {.v = brightdown } },
 	{ NULL, 	XF86XK_AudioLowerVolume,   spawn,	   {.v = voldown } },
 	{ NULL, 	XF86XK_AudioRaiseVolume,   spawn,	   {.v = volup } },
-	{ NULL, 	XF86XK_AudioMute, 	   spawn, 	   {.v = mutevol } },
+	{ NULL, 	XF86XK_AudioMute, 	       spawn, 	   {.v = mutevol } },
+    { MODKEY,   XK_c,                      spawn,      {.v = clrclip } }, 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
