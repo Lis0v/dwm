@@ -5,7 +5,8 @@ dmenu fonts (hack, noto),
 gaps patch,
 media-keys shortcuts,
 screenshot shortcut,
-clear clipboard shortcut.
+clear clipboard shortcut,
+start/end recording shortcut.
 
 dwm - dynamic window manager
 ============================
