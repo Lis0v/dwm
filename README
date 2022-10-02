@@ -6,7 +6,8 @@ gaps patch,
 media-keys shortcuts,
 screenshot shortcut,
 clear clipboard shortcut,
-start/end recording shortcut.
+start/end recording shortcut,
+lock screen shortcut.
 
 dwm - dynamic window manager
 ============================

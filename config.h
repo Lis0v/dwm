@@ -69,6 +69,7 @@ static const char *mutevol[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *clrclip[] = { "xsel", "-c", NULL };
 static const char *rec[]     = { "rec", "NULL" };
 static const char *rec_q[]   = { "killall", "ffmpeg", "NULL" }; //nasty
+static const char *lock[]    = { "xsecurelock", "NULL" };
 
 static Key keys[] = {
 	/* modifier                     key                         function        argument */
@@ -83,6 +84,7 @@ static Key keys[] = {
     { MODKEY,                       XK_c,                       spawn,          {.v = clrclip } },
     { MODKEY,                       XK_r,                       spawn,          {.v = rec } },
     { MODKEY,                       XK_e,                       spawn,          {.v = rec_q } },
+    { MODKEY,                       XK_x,                       spawn,          {.v = lock } },
     //endofself
     { MODKEY,                       XK_b,                       togglebar,      {0} },
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
