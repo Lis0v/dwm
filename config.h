@@ -12,7 +12,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#739900";
+static const char col_cyan[]        = "#b30000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -66,10 +66,7 @@ static const char *brightdown[] = { "brightnessctl", "s", "10%-", NULL};
 static const char *volup[] = { "amixer", "set", "Master", "5%+", NULL };
 static const char *voldown[] = { "amixer", "set", "Master", "5%-", NULL };
 static const char *mutevol[] = { "amixer", "set", "Master", "toggle", NULL };
-static const char *clrclip[] = { "xsel", "-c", NULL };
-static const char *rec[]     = { "rec", "NULL" };
-static const char *rec_q[]   = { "killall", "ffmpeg", "NULL" }; //nasty
-static const char *lock[]    = { "xsecurelock", "NULL" };
+static const char *scroff[] = { "xset", "dpms", "force", "off", NULL};
 
 static Key keys[] = {
 	/* modifier                     key                         function        argument */
@@ -81,10 +78,7 @@ static Key keys[] = {
 	{ NULL,                     	XF86XK_AudioLowerVolume,    spawn,	        {.v = voldown } },
 	{ NULL,                     	XF86XK_AudioRaiseVolume,    spawn,	        {.v = volup } },
 	{ NULL,                     	XF86XK_AudioMute, 	        spawn, 	        {.v = mutevol } },
-    { MODKEY,                       XK_c,                       spawn,          {.v = clrclip } },
-    { MODKEY,                       XK_r,                       spawn,          {.v = rec } },
-    { MODKEY,                       XK_e,                       spawn,          {.v = rec_q } },
-    { MODKEY,                       XK_x,                       spawn,          {.v = lock } },
+	{ MODKEY, 						XK_n,						spawn,			{.v = scroff } },
     //endofself
     { MODKEY,                       XK_b,                       togglebar,      {0} },
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
